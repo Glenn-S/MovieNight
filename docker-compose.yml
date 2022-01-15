@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  postgres-svc:
+    image: postgres-svc
+    build:
+      context: ../services/postgres
+      dockerfile: Dockerfile
+    ports:
+      - 5432:5432
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_DB=${DATABASE_NAME}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - movie-night_network
+
+volumes:
+  postgres-data:
+
+networks: 
+  movie-night_network:
+    name: movie-night_network

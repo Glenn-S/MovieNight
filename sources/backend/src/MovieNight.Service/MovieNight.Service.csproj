@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieNight.Common\MovieNight.Common.csproj" />
+    <ProjectReference Include="..\MovieNight.Data\MovieNight.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Forms\" />
+    <None Remove="Dtos\" />
+    <None Remove="Services\" />
+    <None Remove="Utilities\" />
+    <None Remove="Microsoft.AspNetCore.Mvc" />
+    <None Remove="Models\" />
+    <None Remove="FluentValidation" />
+    <None Remove="Options\" />
+    <None Remove="IdentityManagement\" />
+    <None Remove="Validators\" />
+    <None Remove="Scrutor" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="FluentValidation" Version="10.3.4" />
+    <PackageReference Include="Scrutor" Version="3.3.0" />
+  </ItemGroup>
+</Project>
